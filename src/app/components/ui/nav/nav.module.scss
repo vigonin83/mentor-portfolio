@@ -1,0 +1,20 @@
+@import '../../../styles/vars';
+
+.list {
+   display: flex;
+   justify-content: space-between;
+   font-size: 1rem;
+   font-weight: 600;
+   gap: toRem(100);
+   color: rgba($whiteColor, 0.85);
+   text-transform: uppercase;
+   letter-spacing: toRem(2);
+   text-wrap: nowrap;
+   text-decoration: underline 2px solid;
+   @media (any-hover: hover) {
+      a:hover {
+         transition: $mainTransition;
+         color: $primaryColor;
+      }
+    }
+}

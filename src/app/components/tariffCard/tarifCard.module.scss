@@ -1,0 +1,57 @@
+@import '../../styles/vars';
+
+.card {
+   flex: 1 2 25%;
+   padding: toRem(20) toRem(20);
+   border-radius: toRem(10);
+   height: toRem(540);
+   background-size: 300% auto;
+   background-image: linear-gradient(220deg, $primaryColor 0%, $secondaryColor 55%, $primaryColor 90% );
+   color: $whiteColor;
+   transition: $mainTransition;
+   box-shadow:
+   0px 0px 7px rgba(71, 184, 255, 0.5),
+   inset 4px 4px 8px rgba(175, 230, 255, 0.5),
+   inset -4px -4px 8px rgba(19, 95, 216, 0.35);
+   &:hover {
+      background-position: right top;
+   }      
+}
+   
+.cardDark {
+   flex: 1 2 25%;
+   padding: toRem(25) toRem(25);
+   height: toRem(490);
+   background-color: $shadowPurple;
+   border: 1px solid rgba(255, 255, 255, 0.16);
+   border-left: none;
+}
+
+.leftRadius {
+   border-top-left-radius: toRem(10);
+   border-bottom-left-radius: toRem(10);
+}
+
+.rightRadius {
+   border-top-right-radius: toRem(10);
+   border-bottom-right-radius: toRem(10);
+}
+
+.btnContainer {
+   position: relative;
+   bottom: toRem(30);
+}
+
+.wrapper {
+   margin: 0 auto;
+   border-radius: toRem(10);
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   height: 100%;
+   padding: toRem(4);
+}
+
+.border {
+   border: 0.8px solid rgba(255, 255, 255, 0.30 );
+}

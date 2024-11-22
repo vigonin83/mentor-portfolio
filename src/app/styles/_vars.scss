@@ -1,0 +1,66 @@
+$mainPurple: #120d1f;
+$shadowPurple: #201b2c;
+$lightPurple: #311d5f;
+$primaryColor: #0085fa;
+$secondaryColor: #61daff;
+$starColor: #ffba07;
+$whiteColor: #fff;
+$blackColor: #000;
+
+$boxShadow: 0 8px 6px -6px rgba(0, 0, 0, 0.5);
+$mainTransition: 0.6s cubic-bezier(0, 0, 0.3642, 1);
+
+
+// functions
+@function toRem($value) {
+  $remValue: (calc($value / 16)) + rem;
+  @return $remValue;
+}
+
+
+// mockup width
+
+$maxWidth: toRem(1980);
+$minWidth: toRem(360);
+
+// container width
+
+$container: toRem(1520);
+
+$secondContainer: toRem(996);
+
+$containerPadding: toRem(10);
+
+$containerWidth: toRem(1520 + 10);
+
+// device width
+
+$ps: toEm($containerWidth);
+$tablet: toEm(991.98);
+$sTablet: toEm(767.98);
+$mobile: toEm(575.98);
+$sMobile: toEm(360);
+
+
+@function toEm($value) {
+  $remValue: (
+    $value / 16) + em;
+  @return $remValue;
+}
+
+@mixin container {
+  max-width: $container;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+@mixin adaptiveValue($property, $S-max, $S-min ) {
+   $k: calc(($S-max - $S-min)/(991.98 - 360));
+   $b: $S-min - $k * 360;
+ 
+   $b: $b + px;
+   #{$property}: calc(#{$k} * 100vw + #{$b})
+ }
+
+
+ 

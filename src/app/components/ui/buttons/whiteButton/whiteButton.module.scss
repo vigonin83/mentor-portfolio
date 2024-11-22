@@ -1,0 +1,28 @@
+@import '../../../../styles/vars';
+
+.button {
+   width: toRem(260);
+   min-height: toRem(64);
+   font-size: 1.1rem;
+   font-weight: 800;
+   transition: 0.8s;
+   border: 0;
+   display: flex;
+   justify-content: center;
+   margin: 0 auto;
+   align-items: center;
+   text-align: center;
+   border-radius: toRem(8);
+   background-color: $whiteColor;
+   color: $lightPurple !important;
+   border: 2px solid $lightPurple;
+   text-transform: uppercase;
+   padding: 15px 18px;
+   box-shadow: 
+   0px 0px 5px rgba(71, 184, 255, 0.5),
+   inset 4px 4px 8px rgba(175, 230, 255, 0.5);
+   &:hover {
+      outline: 0;
+      transform: scale(0.98, 0.98);
+   }
+ }

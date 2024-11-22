@@ -1,0 +1,14 @@
+@import '../../styles/vars';
+
+.section {
+   min-height: 100vh;
+}
+
+.container {
+   @include container;
+}
+
+.title {
+   margin-bottom: toRem(60);
+   text-align: center;
+}

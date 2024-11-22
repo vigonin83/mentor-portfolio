@@ -1,0 +1,10 @@
+@import '../../../styles/vars';
+
+.stars {
+   position: absolute;
+   left: 0;
+}
+
+.star {
+   color: $starColor;
+}
