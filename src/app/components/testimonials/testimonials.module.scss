@@ -2,11 +2,7 @@
 
 .section {
    min-height: 100vh;
-   padding-top: toRem(50);
-   // background-attachment: fixed;
-   // background-position: center;
-   // background-repeat: no-repeat;
-   // background-size: cover;
+   padding-top: toRem(80);
 }
 
 .note {
@@ -35,14 +31,14 @@
 .title {
    margin-bottom: toRem(70);
    text-align: center;
-}
-
-.img {
-   color: $starColor;
-   position: absolute;
-   left: 50%;
-   transform: translateX(-50%);
-   top: 33.5%;
+   text-transform: lowercase;
+   background-image: linear-gradient(to top right, $primaryColor, $secondaryColor,);
+   color: transparent;
+   background-clip: text;   
+   & span {
+      color: $whiteColor;
+      text-transform: capitalize;
+   }
 }
 
 .btnContainer {
@@ -60,7 +56,7 @@
 .bulletContainer {
    display: flex;
    justify-content: center;
-   gap: toRem(12);
+   gap: toRem(10);
    height: toRem(140);
    position: absolute;
    top: 0 !important;
@@ -68,24 +64,27 @@
 }
 
 .bullet {
-   width: toRem(112);
-   height: toRem(112);
+   width: toRem(104);
+   height: toRem(104);
    border-radius: 50%;
    cursor: pointer;
    padding: toRem(11);
    transition: $mainTransition;
    &:nth-child(even) {
       align-self: flex-end;
-   }
-   &:hover {
-      box-shadow: inset 3px 0 2px 2px $primaryColor, inset -3px 0 0 2px $secondaryColor, inset 0 3px 3px 2px $secondaryColor, inset 0 -3px 3px 2px $secondaryColor;
+   }   
+   @media (any-hover: hover) {
+      &:hover {
+         box-shadow: inset 3px 0 2px 2px $primaryColor, inset -3px 0 0 2px $secondaryColor,
+         inset 0 3px 3px 2px $secondaryColor, inset 0 -3px 3px 2px $secondaryColor;
+      }
    }
 }
 
 .dot {
    background-color: $primaryColor;
-   width: toRem(90);
-   height: toRem(90);
+   width: toRem(82);
+   height: toRem(82);
    border-radius: 50%;
    background-size: cover;
    background-position: top;
@@ -93,9 +92,74 @@
 
 .bulletActive {
    box-shadow: inset 3px 0 2px 2px $primaryColor, inset -3px 0 0 2px $secondaryColor, inset 0 3px 3px 2px $secondaryColor, inset 0 -3px 3px 2px $secondaryColor;
-   &:hover {
-      box-shadow: inset 3px 0 2px 2px $primaryColor, inset -3px 0 0 2px $secondaryColor, inset 0 3px 3px 2px $secondaryColor, inset 0 -3px 3px 2px $secondaryColor;
+   @media (any-hover: hover) {
+      &:hover {
+         box-shadow: inset 3px 0 2px 2px $primaryColor, inset -3px 0 0 2px $secondaryColor, inset 0 3px 3px 2px $secondaryColor, inset 0 -3px 3px 2px $secondaryColor;
+      }
    }
 }
 
+.nextBtn {
+   position: absolute;
+   width: toRem(40);
+   height: toRem(40);
+   background: linear-gradient(to bottom right, rgba($color: $secondaryColor, $alpha: 0.6), rgba($color: $primaryColor, $alpha: 0.6));
+   cursor: pointer;
+   border-radius: 50%;
+   top: 60%;
+   right: 0;
+   right: 19%;
+   z-index: 2;
+   transition: $mainTransition;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   box-shadow: -2px 1px 5px 1px rgba(2, 1, 2, 0.85);
+   &:after {
+      content: '\1F86A'
+   }
+   @media (any-hover: hover) {
+      &:hover {
+         transform: scale(1.1);
+      }
+   }
+}
+
+.prevBtn {
+   position: absolute;
+   width: toRem(40);
+   height: toRem(40);
+   border-radius: 50%;
+   background: linear-gradient(to bottom right, rgba($color: $secondaryColor, $alpha: 0.6), rgba($color: $primaryColor, $alpha: 0.6));
+   cursor: pointer;
+   top: 60%;
+   left: 19%;
+   z-index: 2;
+   transition: $mainTransition;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   box-shadow: -2px 1px 5px 1px rgba(2, 1, 2, 0.85);
+   &:after {
+      content: '\1F868'
+   }
+   @media (any-hover: hover) {
+      &:hover {
+         transform: scale(1.1);
+      }
+   }
+}
  
+.disBtn {
+   background: rgba($color: $primaryColor, $alpha: 0.4);
+   box-shadow: -2px 1px 5px 1px rgba(2, 1, 2, 0.5);
+   &:after {
+      opacity: 0.4;
+   }
+   @media (any-hover: hover) {
+      &:hover {
+         transform: none;
+         cursor: unset;
+      }
+   }
+}

@@ -2,7 +2,7 @@
 
 .card {
    flex: 1 2 25%;
-   padding: toRem(20) toRem(20);
+   @include adaptiveValue ("padding", 20,  15);
    border-radius: toRem(10);
    height: toRem(540);
    background-size: 300% auto;
@@ -12,15 +12,21 @@
    box-shadow:
    0px 0px 7px rgba(71, 184, 255, 0.5),
    inset 4px 4px 8px rgba(175, 230, 255, 0.5),
-   inset -4px -4px 8px rgba(19, 95, 216, 0.35);
-   &:hover {
-      background-position: right top;
-   }      
+   inset -4px -4px 8px rgba(19, 95, 216, 0.35);   
+   @media (any-hover: hover) {
+      &:hover {
+         background-position: right top;
+      }
+   }
 }
    
 .cardDark {
    flex: 1 2 25%;
-   padding: toRem(25) toRem(25);
+   max-width: 372px;
+   @include adaptiveValue ("padding-top", 25,  20);
+   @include adaptiveValue ("padding-bottom", 25,  20);
+   @include adaptiveValue ("padding-left", 20,  10);
+   @include adaptiveValue ("padding-right", 20,  10);
    height: toRem(490);
    background-color: $shadowPurple;
    border: 1px solid rgba(255, 255, 255, 0.16);
@@ -37,11 +43,6 @@
    border-bottom-right-radius: toRem(10);
 }
 
-.btnContainer {
-   position: relative;
-   bottom: toRem(30);
-}
-
 .wrapper {
    margin: 0 auto;
    border-radius: toRem(10);
@@ -54,4 +55,107 @@
 
 .border {
    border: 0.8px solid rgba(255, 255, 255, 0.30 );
+}
+.header {
+   position: relative;
+   margin: 0 auto;
+   text-align: center;
+   margin-top: toRem(10);
+   &::after {
+   content: '';
+   display: block;
+   width: 100%;
+   position: relative;
+   bottom: 0;
+   left: 50%;
+   transform: translateX(-50%);
+   height: 1px;
+   background: radial-gradient(ellipse at center,rgba(255, 255, 255, 0.315) 0,rgba(31,45,61,0) 80%);
+   }
+}
+
+.title {
+   margin-bottom: toRem(10);
+}
+
+.cost {
+   margin-bottom: toRem(10);
+   font-weight: 800;
+   font-size: toRem(40);
+   & span {
+      font-size: toRem(30);
+   }
+}
+
+.discountCost {
+   display: inline-block;
+   margin-bottom: toRem(10);
+   font-size: toRem(24);
+   text-decoration: line-through;
+   & span {
+      font-size: toRem(20);
+      text-decoration: none;
+   }
+}
+
+.note {
+   position: absolute;
+   background: linear-gradient(to top right, $lightPurple, rgb(56, 56, 170));
+   box-shadow: -1px 1px 3px 1px rgba(16, 12, 20, 0.35);
+   bottom: -33%;
+   left: 50%;
+   transform: translateX(-50%);
+   padding: toRem(4) toRem(18);
+   border-radius: toRem(6);
+   line-height: 1.7;
+   font-weight: 800;
+   font-size: toRem(16);
+   z-index: 2;
+}
+
+.list {
+   margin-left: toRem(13);
+   @include adaptiveValue ("margin-left", 13,  8);
+   font-weight: 600;
+   font-size: toRem(14);
+   text-wrap: nowrap;
+}
+
+.item {
+   margin-bottom: toRem(8);
+   & span {
+      display: inline-block;
+      margin-right: toRem(10);
+      font-weight: 800;
+      font-size: toRem(14);
+   }
+}
+
+.circle {
+   display: inline-block;
+   background: linear-gradient(rgb(56, 56, 170), $lightPurple);
+   box-shadow: -1px 1px 5px 1px rgba(70, 50, 83, 0.55);
+   width: toRem(22);
+   height: toRem(22);
+   border-radius: 50%;
+   text-align: center;
+}
+
+.circleLight {
+   display: inline-block;
+   background: linear-gradient($secondaryColor, $primaryColor);
+   box-shadow: -1px 1px 5px 1px rgba(16, 12, 20, 0.712);
+   width: toRem(22);
+   height: toRem(22);
+   border-radius: 50%;
+   text-align: center;
+}
+
+.btnContainer {
+   position: relative;
+   bottom: toRem(30);
+}
+
+.btnDarkContainer {
+   position: relative;
 }

@@ -2,7 +2,7 @@
 
 .section {
    min-height: 100vh;
-   padding-top: toRem(50)
+   padding-top: toRem(80)
 }
 
 .container {
@@ -12,9 +12,21 @@
 .title {
    margin-bottom: toRem(70);
    text-align: center;
+   background-image: linear-gradient(to top right, $primaryColor, $secondaryColor,);
+   color: transparent;
+   background-clip: text;   
+   & span {
+      color: $whiteColor;
+   }
 }
 
 .cardContainer {
    display: flex;
    align-items: center;
+   flex-wrap: wrap;
+   justify-content: center;
+   @media (max-width: toRem(1200)) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+   }
 }

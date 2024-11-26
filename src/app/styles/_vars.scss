@@ -55,8 +55,8 @@ $sMobile: toEm(360);
 }
 
 @mixin adaptiveValue($property, $S-max, $S-min ) {
-   $k: calc(($S-max - $S-min)/(991.98 - 360));
-   $b: $S-min - $k * 360;
+   $k: calc(($S-max - $S-min)/(1980 - 991.98));
+   $b: $S-min - $k * 991.98;
  
    $b: $b + px;
    #{$property}: calc(#{$k} * 100vw + #{$b})

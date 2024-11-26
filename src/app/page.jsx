@@ -16,11 +16,11 @@ import About from './components/about/about'
 export default function Home() {
 	return (
 		<div className={styles.page}>
-			<Header>
+			{/* <Header>
 				<Logo />
 				<Nav />
 				<Connect />
-			</Header>
+			</Header> */}
 
 			<main className={styles.main}>
 				{/* <h1>IT-Ментор 1</h1>

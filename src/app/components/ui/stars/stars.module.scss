@@ -1,10 +1,6 @@
 @import '../../../styles/vars';
 
-.stars {
-   position: absolute;
-   left: 0;
-}
-
 .star {
    color: $starColor;
+   margin-bottom: toRem(40);
 }

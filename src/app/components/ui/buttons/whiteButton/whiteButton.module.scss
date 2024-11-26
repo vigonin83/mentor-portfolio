@@ -1,11 +1,11 @@
 @import '../../../../styles/vars';
 
 .button {
-   width: toRem(260);
+   max-width: toRem(260);
    min-height: toRem(64);
    font-size: 1.1rem;
    font-weight: 800;
-   transition: 0.8s;
+   transition: $mainTransition;
    border: 0;
    display: flex;
    justify-content: center;
@@ -18,11 +18,11 @@
    border: 2px solid $lightPurple;
    text-transform: uppercase;
    padding: 15px 18px;
-   box-shadow: 
-   0px 0px 5px rgba(71, 184, 255, 0.5),
-   inset 4px 4px 8px rgba(175, 230, 255, 0.5);
-   &:hover {
-      outline: 0;
-      transform: scale(0.98, 0.98);
+   box-shadow: -1px 1px 5px 1px rgba(70, 50, 83, 0.55);
+   @media (any-hover: hover) {
+      &:hover {
+         outline: 0;
+         transform: scale(0.98, 0.98);
+      }
    }
  }

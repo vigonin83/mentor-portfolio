@@ -1,7 +1,7 @@
 @import '../../../../styles/vars';
 
 .button {
-   width: toRem(260);
+   max-width: toRem(260);
    min-height: toRem(64);
    font-size: 1.1rem;
    font-weight: 600;
@@ -30,12 +30,16 @@
      transition: $mainTransition;
      border-radius: 8px;
      color: $primaryColor;
-     &:hover {
-      background: none;
-      color: $whiteColor;
+      @media (any-hover: hover) {
+         &:hover {
+            background: none;
+            color: $whiteColor;
+         }      
+      }
    }
+   @media (any-hover: hover) {
+      &:hover {
+         outline: 0;
+      }
    }
-   &:hover {
-      outline: 0;
-   }
- }
+}
