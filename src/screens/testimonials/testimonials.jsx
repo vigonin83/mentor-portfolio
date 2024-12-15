@@ -1,6 +1,6 @@
 'use client'
-import { testimonials } from '../../data/testimonials'
-import TestimonialCard from '../testimonialCard/testimonialCard'
+import { testimonials } from '../../app/data/testimonials'
+import TestimonialCard from '../../app/components/testimonialCard/testimonialCard'
 import styles from './testimonials.module.scss'
 import { EffectFade, Pagination, Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -8,6 +8,7 @@ import 'swiper/scss'
 import 'swiper/scss/effect-fade'
 import 'swiper/scss/pagination'
 import 'swiper/scss/navigation'
+import img from '../../../public/img/daria_freelancer.jpg'
 
 const Testimonials = () => {
 	const pagination = {
@@ -15,8 +16,10 @@ const Testimonials = () => {
 		el: `.${styles.bulletContainer}`,
 		bulletClass: styles.bullet,
 		bulletActiveClass: styles.bulletActive,
-		renderBullet: function (_, className) {
-			return `<div class="${className}"><div class="${styles.dot}"><span></span></div></div>`
+		renderBullet: function (index, className) {
+			const item = testimonials.find((item, indexItem) => index === indexItem)
+			console.log(item.img)
+			return `<div class="${className}"><div class="${styles.dot}"><img src=${item.img} class="${styles.img}"/></div></div>`
 		}
 	}
 

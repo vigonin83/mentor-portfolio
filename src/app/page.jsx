@@ -1,3 +1,4 @@
+'use client'
 import Header from './components/layouts/header/header'
 import Footer from './components/layouts/footer/footer'
 import Connect from './components/ui/connect/connect'
@@ -5,23 +6,35 @@ import Logo from './components/ui/logo/logo'
 import Nav from './components/ui/nav/nav'
 import styles from './page.module.scss'
 import Copyright from './components/ui/copyright/copyright'
-import Testimonials from './components/testimonials/testimonials'
+import Testimonials from '../screens/testimonials/testimonials'
 import Contacts from './components/ui/contacts/contacts'
-import Tariffs from './components/tariffs/tariffs'
-import MyServices from './components/myServices/myServices'
-import Achievements from './components/achievements/achievements'
-import Benefits from './components/benefits/benefits'
-import About from './components/about/about'
+import GoTo from './components/ui/goTo/goTo'
+import ArrowDown from './components/ui/arrowDown/arrowDown'
+import Tariffs from '../screens/tariffs/tariffs'
+import MyServices from '../screens/myServices/myServices'
+import Achievements from '../screens/achievements/achievements'
+import Benefits from '../screens/benefits/benefits'
+import About from '../screens/about/about'
+// import { useInView } from 'motion/react'
+// import { useEffect, useRef } from 'react'
 
 export default function Home() {
+	// const ref = useRef(null)
+  	// const isInView = useInView(ref)
+
+	//   useEffect(() => {
+		// console.log("Element is in view: ", isInView)
+	//  }, [isInView])
+
 	return (
-		<div className={styles.page}>
-			{/* <Header>
+		<div className={styles.page} >
+			<Header>
 				<Logo />
 				<Nav />
 				<Connect />
-			</Header> */}
-
+			</Header>
+			<GoTo />
+			<ArrowDown />
 			<main className={styles.main}>
 				{/* <h1>IT-Ментор 1</h1>
 				<h2>IT-Ментор 2</h2>

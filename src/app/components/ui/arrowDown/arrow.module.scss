@@ -1,0 +1,12 @@
+@import '../../../styles/vars';
+
+.arrow {
+   position: absolute;
+   bottom: toRem(50);
+   right: 50%;
+   opacity: 0;
+   display: inline-block;
+   font-size: toRem(30);
+   transform: rotate(90deg);
+   z-index: 5;
+}

@@ -1,8 +1,8 @@
 @import '../../../../styles/vars';
 
 .button {
-   max-width: toRem(260);
-   min-height: toRem(64);
+   height: 100%;
+   width: 100%;
    font-size: 1.1rem;
    font-weight: 800;
    transition: $mainTransition;
@@ -19,6 +19,7 @@
    text-transform: uppercase;
    padding: 15px 18px;
    box-shadow: -1px 1px 5px 1px rgba(70, 50, 83, 0.55);
+   overflow: hidden;
    @media (any-hover: hover) {
       &:hover {
          outline: 0;

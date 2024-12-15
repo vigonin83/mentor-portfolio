@@ -3,4 +3,10 @@
 .star {
    color: $starColor;
    margin-bottom: toRem(40);
+   @media (max-width: $sTablet) {
+      margin-bottom: toRem(30);
+   }
+   @media (max-width: $mobile) {
+      margin-bottom: toRem(20);
+   }
 }

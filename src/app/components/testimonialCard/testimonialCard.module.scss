@@ -5,13 +5,35 @@
    margin: 0 auto;
    text-align: center;
    margin-top: toRem(190);
+   @media (max-width: $tablet) {
+      margin-top: toRem(270);
+   }
+   @media (max-width: $sTablet) {
+      margin-top: toRem(220);
+   }
+   @media (max-width: $mobile) {
+      margin-top: toRem(180);
+   }
 }
 
 .title {
    text-transform: capitalize;
    margin-bottom: toRem(30);
+   @media (max-width: $mobile) {
+      margin-bottom: toRem(20);
+   }
+   
 }
 
 .note {
    margin-bottom: toRem(30);
+   @media (max-width: $mobile) {
+      margin-bottom: toRem(20);
+   }
+}
+
+.text {
+   @media (max-width: $sTablet) {
+      font-size: toRem(16);
+   }
 }

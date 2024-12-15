@@ -6,7 +6,8 @@
    position: absolute;
    top: 0;
    left: 50%;
-   transform: translateX(-50%)
+   transform: translateX(-50%);
+   z-index: 2;
 }
 
 .container {
@@ -14,7 +15,8 @@
 }
 
 .wrapper {
+   width: 100%;
    display: flex;
    justify-content: space-between;
-   gap: toRem(10);
+   gap: toRem(40);
 }

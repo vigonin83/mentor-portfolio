@@ -1,0 +1,27 @@
+@import '../../../styles/vars'; 
+
+.body {
+   position: fixed;
+   width: toRem(45);
+   height: toRem(45);
+   bottom: toRem(30);
+   right: toRem(30);
+   border-radius: 60%;
+   cursor: pointer;
+   background: linear-gradient(to bottom right, rgba($color: $secondaryColor, $alpha: 0.5), rgba($color: $primaryColor, $alpha: 0.5));
+   transition: $mainTransition;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   box-shadow: -2px 1px 5px 1px rgba(2, 1, 2, 0.85);
+   z-index: 3;
+   &:after {
+      content: '\1F868';
+      transform: rotate(90deg)
+   }
+   @media (any-hover: hover) {
+      &:hover {
+         transform: scale(1.1);
+      }
+   }
+ }

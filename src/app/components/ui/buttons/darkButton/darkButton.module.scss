@@ -1,8 +1,8 @@
 @import '../../../../styles/vars';
 
 .button {
-   max-width: toRem(260);
-   min-height: toRem(64);
+   height: 100%;
+   width: 100%;
    font-size: 1.1rem;
    font-weight: 600;
    text-transform: uppercase;
@@ -22,6 +22,7 @@
    0px 0px 5px rgba(71, 184, 255, 0.5),
    inset 4px 4px 8px rgba(175, 230, 255, 0.5),
    inset -4px -4px 8px rgba(19, 95, 216, 0.35);
+   overflow: hidden;
    & span {
      background-color: $shadowPurple;
      padding: 13.5px 18px;

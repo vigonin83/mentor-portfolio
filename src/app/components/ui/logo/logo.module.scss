@@ -1,0 +1,7 @@
+@import '../../../styles/vars';
+
+.wrapper {
+   display: inline-flex;
+   justify-content: center;
+   gap: toRem(5);
+}

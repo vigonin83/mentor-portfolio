@@ -1,8 +1,9 @@
-@import '../../styles/vars';
+@import '../../app/styles/vars';
 
 .section {
    min-height: 100vh;
-   padding-top: toRem(80);
+   padding-top: toRem(100);
+   padding-bottom: toRem(100);
 }
 
 .note {
@@ -12,7 +13,6 @@
    text-align: right;
    margin-right: toRem(30);
    margin-bottom: toRem(60);
-
    &::after {
       content: "";
       position: absolute;
@@ -22,10 +22,29 @@
       height: toRem(0.8);
       background: linear-gradient(to right, rgba(255,255,255,0) -5%,rgba(255,255,255,0.25) 40%,rgba(255,255,255,0.4) 90%);  
    }
+   @media (max-width: $tablet) {
+      margin-right: toRem(30);
+      right: 0;
+      &::after {
+         content: "";
+         width: 0;
+         height: 0;
+         background: none;  
+      }
+   }
+   @media (max-width: $sTablet) {
+      right: 50%;
+      margin-right: 0;
+      transform: translateX(50%);
+      margin-bottom: toRem(40);
+      text-align: center;
+   }
+
 }
 .container {
    @include container;
    text-align: center;
+   position: relative;
 }
 
 .title {
@@ -38,6 +57,9 @@
    & span {
       color: $whiteColor;
       text-transform: capitalize;
+   }
+   @media (max-width: $sTablet) {
+      margin-bottom: toRem(40);
    }
 }
 
@@ -56,11 +78,22 @@
 .bulletContainer {
    display: flex;
    justify-content: center;
+   flex-wrap: wrap;
    gap: toRem(10);
    height: toRem(140);
    position: absolute;
    top: 0 !important;
    z-index: 3;
+   @media (max-width: $tablet) {
+      gap: toRem(30) toRem(40);
+   }
+   @media (max-width: $sTablet) {
+      gap: toRem(20) toRem(30);
+   }
+   @media (max-width: $mobile) {
+      gap: toRem(8) toRem(5);
+   }
+
 }
 
 .bullet {
@@ -79,6 +112,18 @@
          inset 0 3px 3px 2px $secondaryColor, inset 0 -3px 3px 2px $secondaryColor;
       }
    }
+   @media (max-width: $sTablet) {
+      width: toRem(80);
+      height: toRem(80);   
+      padding: toRem(9);
+      &:hover {
+         box-shadow: inset 3px 0 1px 1px $primaryColor, inset -3px 0 0 1px $secondaryColor, inset 0 3px 2px 1px $secondaryColor, inset 0 -3px 2px 1px $secondaryColor;
+      }
+   }
+   @media (max-width: $mobile) {
+      width: toRem(70);
+      height: toRem(70);   
+   }
 }
 
 .dot {
@@ -88,14 +133,35 @@
    border-radius: 50%;
    background-size: cover;
    background-position: top;
+   overflow: hidden;
+   @media (max-width: $sTablet) {
+      width: toRem(62);
+      height: toRem(62);   
+   }
+   @media (max-width: $mobile) {
+      width: toRem(53);
+      height: toRem(53);   
+   }
+}
+
+.img {
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   object-fit: contain;
+   background-repeat: no-repeat;
 }
 
 .bulletActive {
    box-shadow: inset 3px 0 2px 2px $primaryColor, inset -3px 0 0 2px $secondaryColor, inset 0 3px 3px 2px $secondaryColor, inset 0 -3px 3px 2px $secondaryColor;
-   @media (any-hover: hover) {
-      &:hover {
-         box-shadow: inset 3px 0 2px 2px $primaryColor, inset -3px 0 0 2px $secondaryColor, inset 0 3px 3px 2px $secondaryColor, inset 0 -3px 3px 2px $secondaryColor;
-      }
+   // @media (any-hover: hover) {
+   //    &:hover {
+   //       box-shadow: inset 3px 0 2px 2px $primaryColor, inset -3px 0 0 2px $secondaryColor, inset 0 3px 3px 2px $secondaryColor, inset 0 -3px 3px 2px $secondaryColor;
+   //    }
+   // }
+   @media (max-width: $sTablet) {
+      box-shadow: inset 3px 0 1px 1px $primaryColor, inset -3px 0 0 1px $secondaryColor, inset 0 3px 2px 1px $secondaryColor, inset 0 -3px 2px 1px $secondaryColor;
    }
 }
 
@@ -106,10 +172,10 @@
    background: linear-gradient(to bottom right, rgba($color: $secondaryColor, $alpha: 0.6), rgba($color: $primaryColor, $alpha: 0.6));
    cursor: pointer;
    border-radius: 50%;
-   top: 60%;
+   top: 62%;
    right: 0;
    right: 19%;
-   z-index: 2;
+   z-index: 3;
    transition: $mainTransition;
    display: flex;
    align-items: center;
@@ -123,6 +189,17 @@
          transform: scale(1.1);
       }
    }
+   @media (max-width: $tablet) {
+      right: 5%;
+      top: 68%;
+   }
+   @media (max-width: $sTablet) {
+      right: 1%;
+      top: 63%;
+   }
+   @media (max-width: $mobile) {
+      top: 43%;
+   }
 }
 
 .prevBtn {
@@ -132,14 +209,14 @@
    border-radius: 50%;
    background: linear-gradient(to bottom right, rgba($color: $secondaryColor, $alpha: 0.6), rgba($color: $primaryColor, $alpha: 0.6));
    cursor: pointer;
-   top: 60%;
+   top: 62%;
    left: 19%;
-   z-index: 2;
    transition: $mainTransition;
    display: flex;
    align-items: center;
    justify-content: center;
    box-shadow: -2px 1px 5px 1px rgba(2, 1, 2, 0.85);
+   z-index: 3;
    &:after {
       content: '\1F868'
    }
@@ -147,6 +224,17 @@
       &:hover {
          transform: scale(1.1);
       }
+   }
+   @media (max-width: $tablet) {
+      top: 68%;
+      left: 5%;
+   }
+   @media (max-width: $sTablet) {
+      left: 1%;
+      top: 63%;
+   }
+   @media (max-width: $mobile) {
+      top: 43%;
    }
 }
  

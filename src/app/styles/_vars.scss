@@ -17,6 +17,11 @@ $mainTransition: 0.6s cubic-bezier(0, 0, 0.3642, 1);
   @return $remValue;
 }
 
+@function toEm($value) {
+  $remValue: (
+    $value / 16) + em;
+  @return $remValue;
+}
 
 // mockup width
 
@@ -41,26 +46,45 @@ $sTablet: toEm(767.98);
 $mobile: toEm(575.98);
 $sMobile: toEm(360);
 
-
-@function toEm($value) {
-  $remValue: (
-    $value / 16) + em;
-  @return $remValue;
-}
-
 @mixin container {
+  width: 100%;
   max-width: $container;
-  padding: 0 10px;
+  padding: 0 toRem(10);
   margin: 0 auto;
+  @media (max-width: $tablet) {
+    padding: 0 toRem(30);
+ }
 }
+
+@mixin adaptiveMaxValue($property, $S-max, $S-min ) {
+   $k: calc(($S-max - $S-min)/(1500 - 1200));
+   $b: $S-min - $k * 1200;
+   $b: $b + px;
+   #{$property}: calc(#{$k} * 100vw + #{$b})
+ }
 
 @mixin adaptiveValue($property, $S-max, $S-min ) {
    $k: calc(($S-max - $S-min)/(1980 - 991.98));
    $b: $S-min - $k * 991.98;
- 
    $b: $b + px;
    #{$property}: calc(#{$k} * 100vw + #{$b})
  }
+
+@mixin adaptiveSTabletValue($property, $S-max, $S-min ) {
+   $k: calc(($S-max - $S-min)/(767.98 - 575.98));
+   $b: $S-min - $k * 575.98;
+   $b: $b + px;
+   #{$property}: calc(#{$k} * 100vw + #{$b})
+ }
+
+@mixin adaptiveMobileValue($property, $S-max, $S-min ) {
+   $k: calc(($S-max - $S-min)/(575.98 - 360));
+   $b: $S-min - $k * 360;
+   $b: $b + px;
+   #{$property}: calc(#{$k} * 100vw + #{$b})
+ }
+
+
 
 
  

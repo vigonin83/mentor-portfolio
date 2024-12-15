@@ -1,0 +1,35 @@
+@import '../../app/styles/vars';
+
+.section {
+   min-height: 100vh;
+   padding-top: toRem(64);
+   background-image: url(../../../public/img/background_1.jpg);
+   background-attachment: fixed;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   clip-path: polygon(0% 0%, 100.1% 0%, 100.1% 89.3%, 0% 99.5%);
+}
+
+.container {
+   @include container;
+}
+
+.wrapper {
+   display: flex;
+   justify-content: space-between;
+   gap: toRem(150);
+   align-items: center;
+}
+
+.preTitle {
+   margin-bottom: toRem(30);
+}
+
+.title {
+   margin-bottom: toRem(30);
+}
+
+.text {
+   color: $whiteColor;
+}

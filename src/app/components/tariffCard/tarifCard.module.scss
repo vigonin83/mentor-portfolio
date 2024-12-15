@@ -18,11 +18,16 @@
          background-position: right top;
       }
    }
+   @media (max-width: toRem(1200)) {
+      order: -1;
+   }
+   @media (max-width: $sTablet) {
+      height: toRem(480);
+   }
 }
    
 .cardDark {
    flex: 1 2 25%;
-   max-width: 372px;
    @include adaptiveValue ("padding-top", 25,  20);
    @include adaptiveValue ("padding-bottom", 25,  20);
    @include adaptiveValue ("padding-left", 20,  10);
@@ -31,6 +36,13 @@
    background-color: $shadowPurple;
    border: 1px solid rgba(255, 255, 255, 0.16);
    border-left: none;
+   @media (max-width: toRem(1200)) {
+      border-radius: toRem(10);
+      border-left:  1px solid rgba(255, 255, 255, 0.16);
+   }
+   @media (max-width: $sTablet) {
+      height: toRem(430);
+   }
 }
 
 .leftRadius {
@@ -51,6 +63,9 @@
    justify-content: space-between;
    height: 100%;
    padding: toRem(4);
+   @media (max-width: $sTablet) {
+      padding: toRem(0);
+   }
 }
 
 .border {
@@ -111,23 +126,41 @@
    font-weight: 800;
    font-size: toRem(16);
    z-index: 2;
+   @media (max-width: $sTablet) {
+      font-size: toRem(12);
+      bottom: -26%;
+   }
 }
 
 .list {
    margin-left: toRem(13);
-   @include adaptiveValue ("margin-left", 13,  8);
+   @include adaptiveValue ("margin-left", 17, 0);
    font-weight: 600;
    font-size: toRem(14);
    text-wrap: nowrap;
+   @media (max-width: toRem(1200)) {
+      margin-left: toRem(12);
+   }
+   @media (max-width: $sTablet) {
+      font-size: toRem(12);
+      @include adaptiveSTabletValue("margin-left", 16, 12 );
+   }
+   @media (max-width: $mobile) {
+      font-size: toRem(12);
+      margin-left: 7%;
+   }
 }
 
 .item {
    margin-bottom: toRem(8);
    & span {
       display: inline-block;
-      margin-right: toRem(10);
+      margin-right: toRem(14);
       font-weight: 800;
       font-size: toRem(14);
+      @media (max-width: $sTablet) {
+         margin-right: toRem(10);
+      }
    }
 }
 
@@ -153,9 +186,23 @@
 
 .btnContainer {
    position: relative;
-   bottom: toRem(30);
+   bottom: toRem(29);
+   width: 90%;
+   margin: 0 auto;
+   height: toRem(63);
+   @media (max-width: $sTablet) {
+      margin: 0 auto;
+      width: 90%;
+   }
 }
 
 .btnDarkContainer {
    position: relative;
+   width: 90%;
+   margin: 0 auto;
+   height: toRem(62);
+   @media (max-width: $sTablet) {
+      margin: 0 auto;
+      width: 90%;
+   }
 }

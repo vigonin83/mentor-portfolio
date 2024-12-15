@@ -1,0 +1,26 @@
+@import '../../../styles/vars';
+
+.value {
+   display: inline-flex;
+   justify-content: flex-start;
+   font-size: toRem(70);
+   font-weight: 800;
+   background-image: linear-gradient(to top right, $primaryColor, $secondaryColor);
+   color: transparent;
+   background-clip: text;
+   width: toRem(160);
+   @media (max-width: $sTablet) {
+      font-size: toRem(50);
+   }
+   @media (max-width: $mobile) {
+      font-size: toRem(36);
+   }
+}
+
+.count {
+   text-align: right;
+   width: toRem(120);
+   @media (max-width: $sTablet) {
+      text-align: center;
+   }
+}
