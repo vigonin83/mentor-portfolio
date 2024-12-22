@@ -1,7 +1,8 @@
 import Stars from '../ui/stars/stars'
 import styles from './testimonialCard.module.scss'
 
-const TestimonialCard = ({ name, age, text, profession, rating }) => {
+const TestimonialCard = ({name, age, text, profession, rating }) => {
+	
 	return (
 		<div className={styles.card}>
 			<div className={styles.wrapper}>

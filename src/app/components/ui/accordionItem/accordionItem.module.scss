@@ -1,0 +1,70 @@
+@import '../../../styles/vars';
+
+.wrapper {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   gap: toRem(16);
+   overflow: hidden;
+}
+
+.body {
+   background-color: $shadowPurple;
+   border: 1px solid rgba(255, 255, 255, 0.16);
+   border-radius: toRem(10);
+}
+
+.title {
+   width: 100%;
+}
+
+.btn {
+   display: flex;
+   padding: toRem(20) toRem(24);
+   align-items: center;
+   width: 100%;
+   font-size: toRem(18);
+   color: $whiteColor;
+   font-weight: 800;
+   font-size: inherit;
+   overflow: hidden;
+   &::after {
+      content: '^';
+      display: flex;
+      vertical-align: text-bottom;
+      align-items: flex-end;
+      justify-content: center;
+      width: toRem(40);
+      height: toRem(40);
+      margin-left: auto;
+      inset: 0;
+      border-radius: 50%;
+      line-height: 1; 
+      padding: toRem(2);
+      background:linear-gradient(60deg, $primaryColor 30%, $secondaryColor 80%); 
+      mask: 
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+      mask-composite: exclude;       
+   }
+}
+
+.btnActive {
+   &::after {
+      background-image: linear-gradient(215deg, $primaryColor 0%, $secondaryColor 55%, $primaryColor 90% );
+      background-size: 280% auto;
+      box-shadow: 
+      0px 0px 5px rgba(71, 184, 255, 0.5),
+      inset 4px 4px 8px rgba(175, 230, 255, 0.5),
+      inset -4px -4px 8px rgba(19, 95, 216, 0.35);
+      mask: none;
+   }
+}
+
+.hidden {
+   display: none;
+}
+
+.content {
+   padding: 0 toRem(24) toRem(16);
+}

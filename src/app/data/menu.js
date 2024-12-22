@@ -1,31 +1,21 @@
 export const menu = [
-   // {
-   //    id: '0001',
-   //    name: 'Главная',
-   //    link: '/'
-   // },
    {
       id: '0001',
-      name: 'Почему я',
-      link: '#'
-   },
-   {
-      id: '0002',
-      name: 'Что ты получаешь',
+      name: 'Преимущества',
       link: '/benefits',
    },
    {
-      id: '0003',
-      name: 'Услуги',
+      id: '0002',
+      name: 'Мои кейсы',
       link: '/services'
    },
    {
-      id: '0004',
+      id: '0003',
       name: 'Отзывы',
       link: '/testimonials'
    },
    {
-      id: '0005',
+      id: '0004',
       name: 'Контакты',
       link: '/contacts'
    },

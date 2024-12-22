@@ -15,24 +15,11 @@ import MyServices from '../screens/myServices/myServices'
 import Achievements from '../screens/achievements/achievements'
 import Benefits from '../screens/benefits/benefits'
 import About from '../screens/about/about'
-// import { useInView } from 'motion/react'
-// import { useEffect, useRef } from 'react'
 
 export default function Home() {
-	// const ref = useRef(null)
-  	// const isInView = useInView(ref)
-
-	//   useEffect(() => {
-		// console.log("Element is in view: ", isInView)
-	//  }, [isInView])
-
 	return (
 		<div className={styles.page} >
-			<Header>
-				<Logo />
-				<Nav />
-				<Connect />
-			</Header>
+			<Header />
 			<GoTo />
 			<ArrowDown />
 			<main className={styles.main}>

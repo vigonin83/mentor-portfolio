@@ -4,6 +4,10 @@
    min-height: 100vh;
    padding-top: toRem(100);
    padding-bottom: toRem(100);
+   @media (max-width: $mobile) {
+      padding-top: toRem(40);
+      padding-bottom: toRem(40);
+   }
 }
 
 .note {

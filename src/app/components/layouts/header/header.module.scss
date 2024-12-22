@@ -1,12 +1,12 @@
 @import '../../../styles/vars';
 
 .header {
-   padding: toRem(10) 0;
+   padding: toRem(20) 0;
    background-color: transparent;
    position: absolute;
    top: 0;
-   left: 50%;
-   transform: translateX(-50%);
+   left: 0;
+   right: 0;
    z-index: 2;
 }
 

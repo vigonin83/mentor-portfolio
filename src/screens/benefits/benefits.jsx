@@ -1,27 +1,89 @@
-import { useEffect, useRef } from 'react'
 import styles from './benefits.module.scss'
-import { useInView } from 'motion/react'
 
 const Benefits = () => {
-	const ref = useRef(null)
-	const isInView = useInView(ref)
-	useEffect(() => {
-		//  console.log("Element is in view: ", isInView)
-	}, [isInView])
-
 	return (
-		<section
-			className={styles.section}
-			ref={ref}
-		>
+		<section className={styles.section}>
+			<p className={styles.note}>
+				Рвасскажу тебе - <br /> почему нам стоит поработать
+			</p>
 			<div className={styles.container}>
-				<h2 className={styles.title}>Преимущества работы со мной / Почему я</h2>
-				Почему я
-				<p>
-					Работал в службе безопасности, торговле, и после 35 лет попал в IT, за последние два месяца более 20 собесов,
-					8 офферов (возможно %) Хочешь так же ? Решения Что вы получаете - преимущества. Легенду, пошаговый план, мок
-					интервью, составленное резюме, зарплатные переговоры
-				</p>
+				<h2 className={styles.title}>
+					<span>Преимущества работы со</span> мной
+				</h2>
+				<div className={styles.wrapper}>
+					<div className={styles.left}>
+						<div className={styles.body}>
+							<ul className={styles.list}>
+								<li className={styles.item}>
+									<h5 className={styles.itemTitle}>Узнаешь как проходить СБ</h5>
+									<p className={styles.itemText}>
+										<span className={styles.itemSubtitle}>Служба безопасности</span>
+										<span className={styles.itemNote}>Специалист</span>
+										Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis, iusto! Voluptatibus placeat
+										aliquam temporibus sed blanditiis quos maiores culpa perferendis rem in. Maxime, nisi obcaecati
+										debitis et earum rem iure nobis at. Fugiat, in provident.
+									</p>
+								</li>
+								<li className={styles.item}>
+									<h5 className={styles.itemTitle}>Увеличим конверсию откликов на твое резюме</h5>
+									<p className={styles.itemText}>
+										<span className={styles.itemSubtitle}>Служба безопасности</span>
+										<span className={styles.itemNote}>Специалист</span>
+										Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis, iusto! Voluptatibus placeat
+										aliquam temporibus sed blanditiis quos maiores culpa perferendis rem in. Maxime, nisi obcaecati
+										debitis et earum rem iure nobis at. Fugiat, in provident.
+									</p>
+								</li>
+								<li className={''}>
+									<h5 className={styles.itemTitle}>Как провести зарплатные переговоры</h5>
+									<p className={styles.itemText}>
+										<span className={styles.itemSubtitle}>Служба безопасности</span>
+										<span className={styles.itemNote}>Специалист</span>
+										Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis, iusto! Voluptatibus placeat
+										aliquam temporibus sed blanditiis quos maiores culpa perferendis rem in. Maxime, nisi obcaecati
+										debitis et earum rem iure nobis at. Fugiat, in provident.
+									</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div className={styles.right}>
+						<div className={styles.body}>
+							<ul className={styles.list}>
+								<li className={styles.item}>
+									<h5 className={styles.itemTitle}>Вытащим собеседование на Soft-skill</h5>
+									<p className={styles.itemText}>
+										<span className={styles.itemSubtitle}>Служба безопасности</span>
+										<span className={styles.itemNote}>Специалист</span>
+										Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis, iusto! Voluptatibus placeat
+										aliquam temporibus sed blanditiis quos maiores culpa perferendis rem in. Maxime, nisi obcaecati
+										debitis et earum rem iure nobis at. Fugiat, in provident.
+									</p>
+								</li>
+								<li className={styles.item}>
+									<h5 className={styles.itemTitle}>Преимущества</h5>
+									<p className={styles.itemText}>
+										<span className={styles.itemSubtitle}>Служба безопасности</span>
+										<span className={styles.itemNote}>Специалист</span>
+										Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis, iusto! Voluptatibus placeat
+										aliquam temporibus sed blanditiis quos maiores culpa perferendis rem in. Maxime, nisi obcaecati
+										debitis et earum rem iure nobis at. Fugiat, in provident.
+									</p>
+								</li>
+								<li className={''}>
+									<h5 className={styles.itemTitle}>Преимущества</h5>
+									<p className={styles.itemText}>
+										<span className={styles.itemSubtitle}>Служба безопасности</span>
+										<span className={styles.itemNote}>Специалист</span>
+										Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis, iusto! Voluptatibus placeat
+										aliquam temporibus sed blanditiis quos maiores culpa perferendis rem in. Maxime, nisi obcaecati
+										debitis et earum rem iure nobis at. Fugiat, in provident.
+									</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 	)

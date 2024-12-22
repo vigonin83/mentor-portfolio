@@ -8,7 +8,6 @@ import 'swiper/scss'
 import 'swiper/scss/effect-fade'
 import 'swiper/scss/pagination'
 import 'swiper/scss/navigation'
-import img from '../../../public/img/daria_freelancer.jpg'
 
 const Testimonials = () => {
 	const pagination = {
@@ -18,7 +17,6 @@ const Testimonials = () => {
 		bulletActiveClass: styles.bulletActive,
 		renderBullet: function (index, className) {
 			const item = testimonials.find((item, indexItem) => index === indexItem)
-			console.log(item.img)
 			return `<div class="${className}"><div class="${styles.dot}"><img src=${item.img} class="${styles.img}"/></div></div>`
 		}
 	}
@@ -51,7 +49,7 @@ const Testimonials = () => {
 					fadeEffect={fadeEffect}
 					modules={[EffectFade, Pagination, Navigation]}
 				>
-					<div class={styles.bulletContainer}></div>
+					<div className={styles.bulletContainer}></div>
 					{testimonials.map((testimonial) => (
 						<SwiperSlide key={testimonial.id}>
 							<TestimonialCard {...testimonial} />

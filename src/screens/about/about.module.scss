@@ -18,18 +18,31 @@
 .wrapper {
    display: flex;
    justify-content: space-between;
-   gap: toRem(150);
+   gap: toRem(120);
    align-items: center;
 }
 
 .preTitle {
+   font-weight: 600;
    margin-bottom: toRem(30);
 }
 
 .title {
-   margin-bottom: toRem(30);
+   & span {
+      background-image: linear-gradient(to top right, $primaryColor, $secondaryColor,);
+      color: transparent;
+      background-clip: text
+   }
 }
 
 .text {
    color: $whiteColor;
+   font-weight: 600;
+}
+
+.type {
+   display: inline-block;
+   font-size: 4rem; 
+   font-weight: 800; 
+   margin-bottom: toRem(30) 
 }

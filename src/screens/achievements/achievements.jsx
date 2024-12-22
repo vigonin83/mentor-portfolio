@@ -24,7 +24,7 @@ const Achievements = () => {
 							color='#fff'
 						/>
 						<div>
-							<Counter keyFrames={35} />
+							<Counter keyFrames={30} />
 							<p>лет сам пришел в IT</p>
 						</div>
 					</div>
@@ -55,7 +55,7 @@ const Achievements = () => {
 						/>
 
 						<div>
-							<Counter keyFrames={4} />
+							<Counter keyFrames={3} />
 							<p>коммерческого опыта</p>
 						</div>
 					</div>

@@ -1,16 +1,31 @@
+import { useState } from 'react'
+import { services } from '../../app/data/services'
+import AccordionItem from '../../app/components/ui/accordionItem/accordionItem'
 import styles from './myServices.module.scss'
 
 const MyServices = () => {
+	const [openId, setId] = useState(null)
+
+	const handleClick = (index) => {
+		index === openId ? setId(null) : setId(index)
+	}
+
 	return (
 		<section className={styles.section}>
 			<div className={styles.container}>
-				<h2 className={styles.title}>Мои услуги</h2>
-				<ul>
-					<li>1.Техническое мок-интервью - позиция Frontend - разработчик (стек: React, TypeScript, Redux)</li>
-					<li>2.Поведенческое интервью - протестируем твои Soft Skills.</li>
-					<li>3.Cоставление легенды - составим персональную легенду для тебя исходя из твоих параметров</li>
-					<li>4.Составление продающего резюме - увеличим отклики на твою кандидатуру</li>
-				</ul>
+				<h2 className={styles.title}>
+					Мои <span>кейсы</span>
+				</h2>
+				<div className={styles.wrapper}>
+					{services.map((item, index) => (
+						<AccordionItem
+							key={item.id}
+							{...item}
+							isOpen={index === openId}
+							onClick={() => handleClick(index)}
+						/>
+					))}
+				</div>
 			</div>
 		</section>
 	)

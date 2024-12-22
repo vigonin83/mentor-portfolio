@@ -2,7 +2,12 @@
 
 .section {
    min-height: 100vh;
-   padding-top: toRem(80)
+   padding-top: toRem(100);
+   padding-bottom: toRem(100);
+   @media (max-width: $mobile) {
+      padding-top: toRem(40);
+      padding-bottom: toRem(40);
+   }
 }
 
 .container {
@@ -10,6 +15,24 @@
 }
 
 .title {
-   margin-bottom: toRem(60);
+   margin-bottom: toRem(70);
    text-align: center;
+   background-image: linear-gradient(to top right, $primaryColor, $secondaryColor,);
+   color: transparent;
+   background-clip: text;   
+   & span {
+      color: $whiteColor;
+   }
+   @media (max-width: $sTablet) {
+      margin-bottom: toRem(40);
+   }
+}
+
+.wrapper {
+   margin: 0 auto;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   gap: toRem(30);
+   max-width: toRem(1100);
 }
