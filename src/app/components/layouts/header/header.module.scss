@@ -2,12 +2,13 @@
 
 .header {
    padding: toRem(20) 0;
-   background-color: transparent;
    position: absolute;
    top: 0;
    left: 0;
    right: 0;
-   z-index: 2;
+   z-index: 100;
+   backdrop-filter: blur(8px);
+   border-bottom: 0.5px solid rgba(128, 128, 128, 0.2);
 }
 
 .container {
@@ -15,8 +16,70 @@
 }
 
 .wrapper {
-   width: 100%;
+   max-width: 100%;
    display: flex;
    justify-content: space-between;
-   gap: toRem(40);
+   gap: toRem(10);
+   align-items: center;
+}
+
+.header_mobile {
+   background: linear-gradient(to right, rgba($color: $shadowPurple, $alpha: 0.9), rgba($color: $mainPurple, $alpha: 0.95));
+   padding: toRem(10) 0;
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   z-index: 100;
+   backdrop-filter: blur(50px);
+   border-bottom: 0.5px solid rgba(128, 128, 128, 0.2);
+   box-shadow: 0 6px 6px -2px #1101016c;
+}
+
+.stripes {
+   display: inline-flex;
+   flex-direction: column;
+   gap: toRem(5);
+   width: toRem(35); 
+   cursor: pointer;  
+   transition: $mainTransition;
+}
+
+.stripe_one, .stripe_two, .stripe_three {
+   background-image: linear-gradient(to top right, $primaryColor, $secondaryColor,);
+   width: 100%;
+   border-radius: toRem(10);
+   height: toRem(4);
+} 
+
+.stripe_two {
+   width: 100%;
+}
+
+.stripe_three {
+   width: 60%;
+}
+
+.stripe_active_one {
+   background-image: linear-gradient(to top right, $primaryColor, $secondaryColor,);
+   width: 100%;
+   border-radius: toRem(10);
+   height: toRem(4);
+   transform: translate(25%, 100%);
+   rotate: 45deg;
+}
+
+.stripe_active_two {
+   background: transparent;
+   width: 100%;
+   height: toRem(4);
+}
+
+.stripe_active_three {
+   background-image: linear-gradient(to top right, $primaryColor, $secondaryColor,);
+   width: 100%;
+   border-radius: toRem(10);
+   height: toRem(4);
+   transform: translate(25%, -100%);
+   rotate: -45deg;
 }

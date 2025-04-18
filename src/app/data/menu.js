@@ -11,13 +11,23 @@ export const menu = [
    },
    {
       id: '0003',
-      name: 'Отзывы',
+      name: 'Портфолио',
       link: '/testimonials'
    },
    {
       id: '0004',
-      name: 'Контакты',
-      link: '/contacts'
+      name: 'Отзывы',
+      link: '/testimonials'
    },
+   {
+      id: '0005',
+      name: 'Тарифы',
+      link: '/testimonials'
+   },
+   // {
+   //    id: '0004',
+   //    name: 'Контакты',
+   //    link: '/contacts'
+   // },
 ]
 

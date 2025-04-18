@@ -23,7 +23,7 @@
       left: calc(100% + toRem(30));
       top: toRem(10);
       width: toRem(440);
-      height: toRem(0.8);
+      height: toRem(1.5);
       background: linear-gradient(to right, rgba(255,255,255,0) -5%,rgba(255,255,255,0.25) 40%,rgba(255,255,255,0.4) 90%);  
    }
    @media (max-width: $tablet) {

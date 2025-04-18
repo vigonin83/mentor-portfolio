@@ -2,7 +2,7 @@ import styles from './connect.module.scss'
 
 const Connect = () => {
    return ( 
-      <p>Свяжись со мной</p>
+      <button className={styles.btn}></button>
     );
 }
  

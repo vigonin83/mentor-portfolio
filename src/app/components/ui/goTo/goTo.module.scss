@@ -6,22 +6,37 @@
    height: toRem(45);
    bottom: toRem(30);
    right: toRem(30);
-   border-radius: 60%;
-   cursor: pointer;
-   background: linear-gradient(to bottom right, rgba($color: $secondaryColor, $alpha: 0.5), rgba($color: $primaryColor, $alpha: 0.5));
+   border-radius: 50%;
+   background: linear-gradient(to bottom right, rgba($color: $secondaryColor, $alpha: 0.9), rgba($color: $primaryColor, $alpha: 0.9));
    transition: $mainTransition;
    display: flex;
    align-items: center;
    justify-content: center;
    box-shadow: -2px 1px 5px 1px rgba(2, 1, 2, 0.85);
    z-index: 3;
-   &:after {
-      content: '\1F868';
-      transform: rotate(90deg)
-   }
+   text-align: center;
    @media (any-hover: hover) {
       &:hover {
          transform: scale(1.1);
       }
    }
+ }
+
+ .content {
+   position: relative;
+   display: block;
+   height: 100%;
+   width: 100%;
+   line-height: 0;
+   font-weight: 700;
+   font-size: toRem(20);
+   &:after {
+      position: absolute;
+      content: '\1F861';
+      top: 50%;
+      left: 50%;
+      color: #fff;
+      transform: translateX(-50%)
+   }
+
  }

@@ -18,8 +18,9 @@
 .wrapper {
    display: flex;
    justify-content: space-between;
-   gap: toRem(120);
+   gap: toRem(20);
    align-items: center;
+   margin-top: toRem(50);
 }
 
 .preTitle {
@@ -38,6 +39,8 @@
 .text {
    color: $whiteColor;
    font-weight: 600;
+   flex-basis: 50%;
+
 }
 
 .type {
@@ -45,4 +48,19 @@
    font-size: 4rem; 
    font-weight: 800; 
    margin-bottom: toRem(30) 
+}
+
+.img_container {
+   max-width: toRem(530);
+   flex-basis: 40%;
+   flex-grow: 2;
+   flex-shrink: 1;
+}
+
+.img {
+   border: 2px solid rgba(80, 80, 80, 0.507);
+   border-radius: toRem(30);
+   border-bottom-right-radius: toRem(190);
+   border-top-left-radius: toRem(110);
+   width: 100%;
 }

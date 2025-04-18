@@ -1,7 +1,8 @@
 @import '../../../styles/vars';
 
 .wrapper {
+   flex-basis: 15%;
    display: inline-flex;
-   justify-content: center;
+   line-height: 0;
    gap: toRem(5);
 }

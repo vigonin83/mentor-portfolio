@@ -1,3 +1,4 @@
+import * as motion from 'motion/react-client'
 import styles from './achievements.module.scss'
 import Counter from '../../app/components/ui/counter/counter'
 import { FaHandHoldingHeart } from 'react-icons/fa'
@@ -5,19 +6,29 @@ import { FaSackDollar } from 'react-icons/fa6'
 import { IoCalendarSharp } from 'react-icons/io5'
 import { MdWorkHistory } from 'react-icons/md'
 import { useMediaQuery } from 'react-responsive'
+import { titleAnimation } from '../../app/data/animation'
 
 const Achievements = () => {
 	const isSTablet = useMediaQuery({
 		query: '(max-width: 767.98px)'
-	 })
+	})
 
 	return (
-		<section className={styles.section}>
+		<motion.section
+			className={styles.section}
+			initial='hidden'
+			whileInView='visible'
+			viewport={{ amount: 0.2 }}
+		>
 			<div className={styles.container}>
-				<h2 className={styles.title}>
+				<motion.h2
+					className={styles.title}
+					custom={1}
+					variants={titleAnimation}
+				>
 					Мои <span>достижения</span>
-				</h2>
-				<div className={styles.wrapper}>
+				</motion.h2>
+				<motion.div className={styles.wrapper}>
 					<div className={styles.itemWrapper}>
 						<IoCalendarSharp
 							size={isSTablet ? 59 : 73}
@@ -59,9 +70,9 @@ const Achievements = () => {
 							<p>коммерческого опыта</p>
 						</div>
 					</div>
-				</div>
+				</motion.div>
 			</div>
-		</section>
+		</motion.section>
 	)
 }
 

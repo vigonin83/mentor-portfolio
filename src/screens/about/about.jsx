@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import styles from './about.module.scss'
-import img from '../../../public/img/man.jpg'
+import img from '../../../public/img/main.jpg'
 import { TypeAnimation } from 'react-type-animation'
 
 const About = () => {
@@ -17,9 +17,9 @@ const About = () => {
 							sequence={[
 								'Я Frontend - разработчик',
 								1000,
-								'Я IT - ментор',
+								'Я - прмогаю бизнесу',
 								1500,
-								'Я Soft Skill - ментор',
+								'Я - создам Вам сайт',
 								1500,
 							]}
 							wrapper='span'
@@ -29,20 +29,21 @@ const About = () => {
 							repeat={Infinity}
 						/>
 						<p>
-							Я разработчик с более чем 3-летним опытом. Специализируюсь на React, TypeScript. <br /> Моя цель - помочь тебе получить первую работу.
+							Я разработчик с более чем 3-летним опытом. Специализируюсь на React, TypeScript. <br /> Моя цель - помочь тебе реализовать проадющий сайт.
 						</p>
 						<p>
-							Да, да я сам пришел в эту сферу после 30 лет, и я был такой же как ты. <br />
+							Да, да я сам пришел в эту сферу после 30 лет. <br />
 							Моя техническая экспертиза и навыки коммуникации помогут оказаться здесь или прыгнуть еще выше. Листай
 							ниже и я тебе обьясню почему нам стоит поработать . . .
 						</p>
 						<button>Давай работать</button>
 					</div>
-					<div>
+					<div className={styles.img_container}>
 						<Image
 							src={img}
 							alt='разработчик'
-							width={550}
+							width={530}
+							className={styles.img}
 						/>
 					</div>
 				</div>

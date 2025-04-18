@@ -1,13 +1,20 @@
+'use client'
+import { useScrollScreen } from '../../../utils/utils'
 import styles from './goTo.module.scss'
 
 const GoTo = () => {
-   
-   return ( 
-      <div className={styles.body}>
-         <div style={styles.content}>
-         </div>
-      </div>
-   );
+	const { isScrollScreen, toScrollTop } = useScrollScreen()
+
+	return (
+		isScrollScreen && (
+			<button
+				className={styles.body}
+				onClick={() => toScrollTop()}
+			>
+				<span className={styles.content}></span>
+			</button>
+		)
+	)
 }
- 
-export default GoTo;
+
+export default GoTo

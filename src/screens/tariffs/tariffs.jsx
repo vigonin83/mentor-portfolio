@@ -1,14 +1,25 @@
+import * as motion from 'motion/react-client'
 import { tariffs } from '../../app/data/tariff'
 import TariffCard from '../../app/components/tariffCard/tarifCard'
 import styles from './tariffs.module.scss'
+import { titleAnimation } from '../../app/data/animation'
 
 const Tariffs = () => {
 	return (
-		<section className={styles.section}>
+		<motion.section
+			initial='hidden'
+			whileInView='visible'
+			viewport={{ amount: 0.2 }}
+			className={styles.section}
+		>
 			<div className={styles.container}>
-				<h2 className={styles.title}>
+				<motion.h2
+					custom={1}
+					variants={titleAnimation}
+					className={styles.title}
+				>
 					Выгодные предложения для <span>Тебя</span>
-				</h2>
+				</motion.h2>
 				<div className={styles.cardContainer}>
 					<TariffCard
 						dark={true}
@@ -37,7 +48,7 @@ const Tariffs = () => {
 					/>
 				</div>
 			</div>
-		</section>
+		</motion.section>
 	)
 }
 

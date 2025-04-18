@@ -29,7 +29,7 @@
    font-size: inherit;
    overflow: hidden;
    &::after {
-      content: '^';
+      content: 'ˇ';
       display: flex;
       vertical-align: text-bottom;
       align-items: flex-end;
@@ -39,7 +39,7 @@
       margin-left: auto;
       inset: 0;
       border-radius: 50%;
-      line-height: 1; 
+      line-height: 0.2; 
       padding: toRem(2);
       background:linear-gradient(60deg, $primaryColor 30%, $secondaryColor 80%); 
       mask: 

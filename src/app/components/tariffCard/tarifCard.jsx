@@ -26,16 +26,16 @@ const TariffCard = ({ title, cost, discountCost, dark, radius }) => {
 				</div>
 				<ul className={styles.list}>
 					<li className={styles.item}>
-						<span className={dark ? styles.circleLight : styles.circle}>&#10004; </span>Техническое интервью React
+						<span className={dark ? styles.circleLight : styles.circle}>&#10004; </span>Экспертиза проекта
 					</li>
 					<li className={styles.item}>
-						<span className={dark ? styles.circleLight : styles.circle}>&#10004; </span>Soft-skills интервью
+						<span className={dark ? styles.circleLight : styles.circle}>&#10004; </span>Выбор инструмента
 					</li>
 					<li className={styles.item}>
-						<span className={dark ? styles.circleLight : styles.circle}>&#10004; </span>Составление резюме
+						<span className={dark ? styles.circleLight : styles.circle}>&#10004; </span>Интерактивные элементы
 					</li>
 					<li className={styles.item}>
-						<span className={dark ? styles.circleLight : styles.circle}>&#10004; </span>Персональная легенда
+						<span className={dark ? styles.circleLight : styles.circle}>&#10004; </span>Сдача проекта
 					</li>
 				</ul>
 

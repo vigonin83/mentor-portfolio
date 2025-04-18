@@ -1,9 +1,12 @@
 'use client'
+import * as motion from 'motion/react-client'
 import { testimonials } from '../../app/data/testimonials'
 import TestimonialCard from '../../app/components/testimonialCard/testimonialCard'
 import styles from './testimonials.module.scss'
 import { EffectFade, Pagination, Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { titleAnimation } from '../../app/data/animation'
+
 import 'swiper/scss'
 import 'swiper/scss/effect-fade'
 import 'swiper/scss/pagination'
@@ -33,14 +36,23 @@ const Testimonials = () => {
 	}
 
 	return (
-		<section className={styles.section}>
+		<motion.section
+			className={styles.section}
+			initial='hidden'
+			whileInView='visible'
+			viewport={{ amount: 0.2 }}
+		>
 			<p className={styles.note}>
 				Отзывы моих клиентов - <br /> ценный источник информации обо мне
 			</p>
 			<div className={styles.container}>
-				<h2 className={styles.title}>
+				<motion.h2
+					className={styles.title}
+					custom={1}
+					variants={titleAnimation}
+				>
 					<span>Голос</span> клиента
-				</h2>
+				</motion.h2>
 				<Swiper
 					effect='fade'
 					draggable={false}
@@ -59,7 +71,7 @@ const Testimonials = () => {
 					<div className={styles.prevBtn}></div>
 				</Swiper>
 			</div>
-		</section>
+		</motion.section>
 	)
 }
 

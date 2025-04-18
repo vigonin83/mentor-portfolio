@@ -13,8 +13,8 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "IT-Ментор | Твой шаг в IT",
-  description: "Персональный сайт IT-Ментора",
+  title: "IT-решения | Разработка сайтов",
+  description: "Персональный сайт Разработчика",
 };
 
 export default function RootLayout({ children }) {

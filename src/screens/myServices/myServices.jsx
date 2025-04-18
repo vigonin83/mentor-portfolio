@@ -1,7 +1,9 @@
+import * as motion from 'motion/react-client'
 import { useState } from 'react'
 import { services } from '../../app/data/services'
 import AccordionItem from '../../app/components/ui/accordionItem/accordionItem'
 import styles from './myServices.module.scss'
+import { titleAnimation } from '../../app/data/animation'
 
 const MyServices = () => {
 	const [openId, setId] = useState(null)
@@ -11,11 +13,24 @@ const MyServices = () => {
 	}
 
 	return (
-		<section className={styles.section}>
-			<div className={styles.container}>
-				<h2 className={styles.title}>
+		<motion.section
+			className={styles.section}
+			initial='hidden'
+			whileInView='visible'
+			viewport={{ amount: 0.2 }}
+		>
+			<motion.div
+				className={styles.container}
+				layoutId='accordion'
+				layout
+			>
+				<motion.h2
+					className={styles.title}
+					custom={1}
+					variants={titleAnimation}
+				>
 					Мои <span>кейсы</span>
-				</h2>
+				</motion.h2>
 				<div className={styles.wrapper}>
 					{services.map((item, index) => (
 						<AccordionItem
@@ -26,8 +41,8 @@ const MyServices = () => {
 						/>
 					))}
 				</div>
-			</div>
-		</section>
+			</motion.div>
+		</motion.section>
 	)
 }
 
